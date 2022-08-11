@@ -1,9 +1,10 @@
 import React from 'react';
 import NewItemForm from './NewItemForm';
 import ItemList from './ItemList';
+import EditItemForm from './EditItemForm';
 import ItemDetail from './ItemDetail';
 
-class GameWidgetControl extends React.Component {
+class ItemControl extends React.Component {
 
   constructor(props) {
     super(props);
@@ -29,6 +30,29 @@ class GameWidgetControl extends React.Component {
     }
   }
 
+  handleDeletingItem = (id) => {
+    const newMainItemList = this.state.mainItemList.filter(item => item.id !== id);
+    this.setState({
+      mainItemList: newMainItemList,
+      selectedItem: null
+    });
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingItemInList = (itemToEdit) => {
+    const editedMainItemList = this.state.mainItemList
+      .filter(item => item.id !== this.state.selectedItem.id)
+      .concat(itemToEdit);
+    this.setState({
+      mainItemList: editedMainItemList,
+      editing: false,
+      selectedItem: null
+    });
+  }
+
   handleAddingNewItemToList = (newItem) => {
     const newMainItemList = this.state.mainItemList.concat(newItem);
     this.setState({mainItemList: newMainItemList});
@@ -40,15 +64,17 @@ class GameWidgetControl extends React.Component {
     this.setState({selectedItem: selectedItem});
   }
 
-
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
-    
-    if (this.state.selectedItem != null) {
+    if (this.state.editing ) {      
+      currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} onEditItem = {this.handleEditingItemInList} />
+      buttonText = "Return to Item List";
+    } else if (this.state.selectedItem != null) {
       currentlyVisibleState = <ItemDetail 
       item={this.state.selectedItem} 
-      />
+      onClickDelete={this.handleDeletingItem}
+      onClickEdit = {this.handleEditClick} />
       buttonText = "Return to Item List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList}/>;
@@ -67,4 +93,4 @@ class GameWidgetControl extends React.Component {
 
 }
 
-export default GameWidgetControl;
+export default ItemControl;
