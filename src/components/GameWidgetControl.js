@@ -1,4 +1,5 @@
 import React from 'react';
+import List from './ItemList';
 
 class GameWidgetControl extends React.Component {
 
