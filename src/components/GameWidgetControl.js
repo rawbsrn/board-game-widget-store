@@ -1,5 +1,7 @@
 import React from 'react';
-import List from './ItemList';
+import NewItemForm from './NewItemForm';
+import ItemList from './ItemList';
+
 
 class GameWidgetControl extends React.Component {
 
@@ -13,12 +15,39 @@ class GameWidgetControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    if (this.state.selectedItem != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedItem: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  }
+
+  handleAddingNewItemToList = (newItem) => {
+    const newMainItemList = this.state.mainItemList.concat(newItem);
+    this.setState({mainItemList: newMainItemList});
+    this.setState({formVisibleOnPage: false});
+  }
+
 
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
     
+    if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList}/>;
+      buttonText = "Return to Item List"; 
+    } else {
+      currentlyVisibleState = <ItemList onItemSelection={this.handleChangingSelectedItem} itemList={this.state.mainItemList} />;
+      buttonText = "Add Item"; 
+    }
     return (
       <React.Fragment>
         {currentlyVisibleState}

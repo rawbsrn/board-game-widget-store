@@ -7,7 +7,7 @@ function Item(props){
     <React.Fragment>
       <div onClick = {() => props.whenItemClicked(props.id)}>
         <h3>{props.name} - {props.price}</h3>
-          <ul style="list-style-type:none;">
+          <ul>
             <li>{props.amount}</li>
             <li>{props.origin}</li>
             <li>{props.color}</li>
@@ -20,7 +20,7 @@ function Item(props){
 }
 
 Item.propTypes = {
-  names: PropTypes.string,
+  name: PropTypes.string,
   origin: PropTypes.string,
   amount: PropTypes.number,
   price: PropTypes.string,
