@@ -14,6 +14,7 @@ function ItemDetail(props){
             <li>{item.size}</li>
           </ul>
           <button onClick={onClickEdit}>Update Item</button>
+          <button onClick={onClickSell}>Sell Item</button>
       <button onClick={()=> onClickDelete(item.id)}>Delete Item</button>
         <hr/>
     </React.Fragment>
