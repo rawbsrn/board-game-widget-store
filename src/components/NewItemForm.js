@@ -7,7 +7,7 @@ function NewItemForm(props){
 
   function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({name: event.target.name.value, origin: event.target.origin.value, amount: parseInt(event.target.amount).value,price: event.target.price.value,color: event.target.color.value,size: event.target.size.value, id: v4()});
+    props.onNewItemCreation({name: event.target.name.value, origin: event.target.origin.value, amount: parseInt(event.target.amount.value),price: event.target.price.value,color: event.target.color.value,size: event.target.size.value, id: v4()});
   }
 
   return (

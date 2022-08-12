@@ -16,7 +16,7 @@ function Form(props) {
           <input
           type='number'
           name='amount'
-          placeholder='130' />
+          placeholder='1' />
           <input
           type='text'
           name='price'
