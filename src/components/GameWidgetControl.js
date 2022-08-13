@@ -79,6 +79,17 @@ class ItemControl extends React.Component {
     this.setState({selectedItem: selectedItem});
   }
 
+  buttonStyle = {
+    "display": "block",
+    "margin": "auto",
+    "padding": ".5em 1em",
+    "backgroundColor": "black",
+    "color": "white",
+    "fontSize": "1.5rem",
+    "border": "none",
+    "borderRadius": ".5em"
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
@@ -103,7 +114,8 @@ class ItemControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button> 
+        <button style={this.buttonStyle}
+        onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
     );
   }
