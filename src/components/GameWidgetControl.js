@@ -82,7 +82,7 @@ class ItemControl extends React.Component {
   buttonStyle = {
     "display": "block",
     "margin": "auto",
-    "padding": ".5em 1em",
+    "padding": ".3em .6em",
     "backgroundColor": "black",
     "color": "white",
     "fontSize": "1.5rem",
