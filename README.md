@@ -1,3 +1,51 @@
+# Board Game Widget Store
+
+#### _A simple website for selling board game accessories._
+
+#### By _**Rob Sameh**_
+
+## Technologies Used
+* _React_
+* _JavaScript_
+* _HTML_
+* _CSS_
+* _Create React App_
+
+## Description
+This application was developed to utilize full CRUD functionality. Users can view inventory, add, update, and delete, and sell items. When a user purchases an item, the amount is reduced by one.
+
+
+## Diagram
+
+![Diagram.drawio](src/img/Diagram.drawio.png)
+
+## Setup/Installation Requirements
+
+* You may need to install Node.js on your machine in order to get working, you can follow the instructions here for more information: `https://www.learnhowtoprogram.com/intermediate-javascript/getting-started-with-javascript/installing-node-js`
+
+
+**_Clone repository_**
+
+*  _Clone git repository to local machine_
+* run the command:
+ ```
+$ git clone https://github.com/rawbsrn/board-game-widget-store.git
+``` 
+* open directory with VScode by typing:
+```
+
+$ code .
+
+```
+**_Build Enviroment and open project in browser:_**
+```
+
+$ npm install
+
+$ npm start
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -45,26 +93,23 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Known Bugs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Please report any issues to: Rob . Sameh @ gmail {dot} com
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-### Making a Progressive Web App
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright (c) _2022_ _Sameh_

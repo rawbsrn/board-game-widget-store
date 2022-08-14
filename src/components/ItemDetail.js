@@ -17,7 +17,7 @@ function ItemDetail(props){
             <li>{item.size}</li>
           </ul>
           <div style={{
-    "text-align": "center",
+    "textAlign": "center",
     "display": "block",
     "margin": "auto"
   }}>
